@@ -6,9 +6,18 @@ project(ur_gazebo)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED)
 
+find_package(gazebo REQUIRED)
+include_directories(${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS})
+list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+
+add_library(force_sensor SHARED src/force_sensor.cpp)
+target_link_libraries(force_sensor ${GAZEBO_LIBRARIES})
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed

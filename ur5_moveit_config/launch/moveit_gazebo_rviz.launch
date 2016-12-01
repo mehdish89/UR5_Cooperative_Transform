@@ -1,0 +1,14 @@
+<launch>
+
+	<include file="$(find ur_gazebo)/launch/ur5.launch">
+	</include>
+
+	<include file="$(find ur5_moveit_config)/launch/move_group.launch">
+		<arg name="allow_trajectory_execution" value="true"/>  
+	</include>
+  
+	<include file="$(find ur5_moveit_config)/launch/moveit_rviz.launch">
+		<arg name="config" value="true"/>
+	</include>
+  
+</launch>

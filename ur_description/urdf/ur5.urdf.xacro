@@ -4,6 +4,7 @@
   <xacro:include filename="$(find ur_description)/urdf/ur.transmission.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/ur.gazebo.xacro" />
 
+
   <property name="pi" value="3.14159265" />
 
   <!-- Inertia parameters -->
@@ -79,6 +80,8 @@
 
 
   <xacro:macro name="ur5_robot" params="prefix joint_limited">
+  
+  	
 
     <link name="${prefix}base_link" >
       <visual>
@@ -199,6 +202,8 @@
     </link>
 
     <joint name="${prefix}wrist_1_joint" type="revolute">
+    
+    	
       <parent link="${prefix}forearm_link" />
       <child link = "${prefix}wrist_1_link" />
       <origin xyz="0.0 0.0 ${forearm_length}" rpy="0.0 ${pi / 2.0} 0.0" />

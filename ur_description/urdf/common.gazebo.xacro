@@ -6,8 +6,10 @@
       <!--robotNamespace>/</robotNamespace-->
       <!--robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType-->
     </plugin>
-
-<!--
+    
+    <plugin name="force_sensor" filename="libforce_sensor@.so"/>
+    
+    <!--
     <plugin name="gazebo_ros_power_monitor_controller" filename="libgazebo_ros_power_monitor.so">
       <alwaysOn>true</alwaysOn>
       <updateRate>1.0</updateRate>
@@ -22,5 +24,18 @@
     </plugin>
 -->
   </gazebo>
+  
+	<gazebo reference="wrist_3_joint">
+		<provideFeedback>true</provideFeedback>
+	</gazebo>
+
+	<gazebo>
+		<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+		<updateRate>100.0</updateRate>
+		<topicName>ft_sensor_topic</topicName>
+		<jointName>wrist_3_joint</jointName>
+		</plugin>
+	</gazebo>
+	
 
 </robot>
