@@ -106,7 +106,7 @@ def jacobian(q):
 					[tz1, tz2, tz3, tz4, tz5, tz6],						
 					[rx1, rx2, rx3, rx4, rx5, rx6],
 					[ry1, ry2, ry3, ry4, ry5, ry6],
-					[rz1, rz2, rz3, rz4, rz5, tz6]])
+					[rz1, rz2, rz3, rz4, rz5, rz6]])
 					
 
 
